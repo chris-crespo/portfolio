@@ -33,8 +33,9 @@ const setupMenuTransition = () => {
         .forEach(showAnchor);
 }
 
+setupScheme();
+
 window.onload = () => {
-    setupScheme();
     setupMenuTransition();
     setupDot();
 }
