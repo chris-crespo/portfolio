@@ -1,0 +1,68 @@
+h3, p {
+    color: var(--fg);
+    letter-spacing: 0.018em;
+    line-height: 1.4em;
+}
+
+h3 {
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.description p:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+@media (max-width: 1000px) {
+    main {
+        margin-top: 16px;
+        margin-bottom: 30px;
+    }
+
+    .description {
+        margin-bottom: 32px;
+    }
+
+    .description h3 {
+        letter-spacing: 0.07em;
+        margin-bottom: 14px;
+    }
+
+    .description p {
+        font-size: 13px;
+        letter-spacing: 0.03em;
+        line-height: 1.85em;
+    }
+
+    nav a {
+        font-size: 54px;
+        line-height: 1.4em;
+    }
+
+    a {
+        transition-property: transform;
+    }
+}
+
+@media (min-width: 1000px) {
+    main {
+        display: flex;
+        justify-content: space-between;
+
+        position: absolute;
+        left: 140px;
+
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    main .description {
+        align-self: flex-end;
+        flex-basis: 300px;
+        margin-bottom: 25px;
+    }
+
+    main a {
+        font-size: 112px;
+    }
+}

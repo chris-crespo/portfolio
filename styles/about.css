@@ -1,0 +1,48 @@
+.header h1 {
+    color: var(--red);
+    font-weight: 300;
+}
+
+.subheader h2 {
+    font-weight: 300;
+}
+
+.dark h2, .dark h4 {
+    color: var(--fg-color);
+}
+
+.dark p {
+    color: var(--fg-color);
+}
+
+
+@media (max-width: 1000px) {
+    .header, .subheader {
+        margin-bottom: 26px;    
+    }
+
+    .header h1 {
+        font-size: 64px;
+    }
+
+    .subheader {
+        margin-bottom: 26px;
+    }
+
+    .subheader h2 {
+        font-size: 26px;
+    }
+
+    section {
+        margin-bottom: 65px;
+    }
+
+    section h4 {
+        font-size: 20px;
+        margin-bottom: 26px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400&display=swap');
+
+:root {
+    --white: #f0efef;
+    --white2: #f2f0f0;
+    --gray: #8a8989;
+    --black: #191818;
+    --black2: #171616;
+    --red: #a02020;
+    --input-border: #8a8989;
+}
+
+:root.dark {
+    --fg: var(--white);
+    --fg2: var(--white2);
+    --bg: var(--black);
+}
+
+:root.light {
+    --fg: var(--black);
+    --fg2: var(--black2);
+    --bg: var(--white2);
+}
+
+.sans {
+    font-family: "Montserrat", sans-serif;
+}
+
+.serif {
+    font-family: "Cormorant Garamond", serif;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    color: var(--fg2);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 64px;
+    font-weight: 300;
+    letter-spacing: 0.001em;
+}
+
+h2, q {
+    color: var(--fg);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+q { 
+    color: var(--red);
+}
+
+h3 {
+    color: var(--fg);
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+h4 {
+    color: var(--fg);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+code {
+    color: var(--fg);
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.4em;
+}
+
+p {
+    color: var(--fg);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.018em;
+    line-height: 1.4em;
+}
+
+label {
+    color: var(--fg);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+}
+
+input, textarea {
+    box-sizing: border-box;
+
+    color: var(--fg);
+    background-color: var(--bg);
+
+    width: 100%;
+    padding: 0 2px 6px;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.2em;
+}
+
+input:invalid, textarea:invalid {
+    border-color: var(--red);
+}
+
+input {
+    border-bottom: 1px solid var(--input-border);
+}
+
+textarea {
+    padding-left: 10px;
+    border-left: 1px solid var(--input-border);
+}
+
+li {
+    overflow: hidden;
+}
+
+mark {
+    color: var(--red) !important;
+    background-color: transparent;
+}
+
+main {
+    width: 80%;
+    min-width: 305px;
+    margin: auto;
+}
+
+.side-wrapper {
+    position: sticky;
+    top: 0;
+
+    background-color: var(--bg);
+    width: 80%;
+    padding: 26px 10%;
+}
+
+.side {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    transition: all 200ms ease-out;
+}
+
+.side-wrapper .socials, .side-wrapper a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+}
+
+.side-wrapper a {
+    color: var(--fg);
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.bar {
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background-color: var(--fg);
+}
+
+.side-wrapper .bar {
+    position: relative;
+    top: 1px;
+
+    margin-right: 14px;
+    margin-left: 6px;
+}
+
+.dot-wrapper {
+    cursor: pointer;
+    position: absolute;
+    top: 28px;
+    right: 10%;
+}
+
+.dot {
+    background-color: var(--fg);
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+}
+
+.menu a {
+    display: inline-block;
+    color: var(--fg);
+    font-weight: 300;
+}
+
+.menu a {
+    letter-spacing: 0.001em;
+    transform: skew(0) translateY(100%);
+}
+
+.menu a.show {
+    transform: skew(0) translateY(0);
+}
+
+a:hover {
+    color: var(--red) !important;
+}
+
+.side-wrapper a:hover, .work a:hover {
+    text-decoration: line-through;
+}
+
+.menu a:hover {
+    transform: skew(-10deg) translate(20px, 0) !important;
+}
+
+.article > :not(.article-img-wrapper, .button) {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-header {
+    margin-bottom: 22px;
+}
+
+.article-header h1 {
+    color: var(--red);
+    letter-spacing: -0.04em;
+}
+
+.article-subheader, 
+.article-alt-header,
+.article-quote, 
+.article-code,
+.article p, 
+.article-img-wrapper, 
+.article-back {
+    margin-bottom: 38px;
+}
+
+.article-subheader h2, .article-quote q {
+    letter-spacing: 0.04em;
+    line-height: 1.3em;
+}
+
+.article-alt-header {
+    margin-top: 72px;
+}
+
+.article-quote {
+    box-sizing: border-box;
+    border-left: 2px solid var(--red);
+    text-align: right;
+}
+
+.article-code {
+    box-sizing: border-box;
+    overflow-x: scroll;
+}
+
+.article p, .article-back a {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    line-height: 1.8em;
+}
+
+.article p {
+    hyphens: auto;
+}
+
+.article-back a {
+    color: var(--fg);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.button {
+    display: block;
+    background-color: var(--fg);
+    width: 158px;
+    padding: 14px 0;
+    border: 1px solid var(--fg);
+    border-radius: 26px;
+    margin: 54px auto 38px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button span {
+    color: var(--bg);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 300;
+    position: relative;
+    top: -1px;
+}
+
+.button:hover {
+    background-color: var(--bg);
+    color: unset !important;
+}
+
+.button:hover span {
+    color: var(--fg);
+}
+
+.contact-header {
+    margin-bottom: 38px;
+}
+
+.contact-field-wrapper {
+    margin-bottom: 38px;
+}
+
+.contact-label-wrapper {
+    margin-bottom: 24px;
+}
+
+.contact-input-wrapper, .contact-textarea-wrapper {
+    position: relative; 
+}
+
+.contact-field-wrapper .line {
+    background-color: var(--fg);
+
+    position: absolute;
+
+    transform-origin: 0 0;
+    transition: transform 300ms ease;
+}
+
+.contact-input-wrapper .line {
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    transform: scaleX(0);
+}
+
+.contact-textarea-wrapper .line {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scaleY(0);
+}
+
+.contact-field-wrapper:focus-within .line {
+    transform: scale(100%);
+}
+
+.not-found {
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-60%);
+}
+
+.not-found h1 {
+    line-height: 1.2em;
+}
+
+@media (min-width: 1000px) {
+    .side-wrapper {
+        flex-direction: row-reverse;
+
+        position: absolute;
+        left: 30px;
+        bottom: calc(50vh);
+        transform: translateY(calc(50% + 128px)) rotate(-90deg);
+        transform-origin: top left;
+    }
+
+    .side-wrapper .bar {
+        width: 100px;
+    }
+
+}

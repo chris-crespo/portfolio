@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+li {
+    list-style: none;
+}
+
+input, textarea {
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
