@@ -1,28 +1,40 @@
-const getColorScheme = () => window.localStorage.getItem("scheme") || "light";
-const storeColorScheme = scheme => window.localStorage.setItem("scheme", scheme)
+import colorScheme from "./scheme.js";
+
+const select = selector => document.querySelector(selector);
+
+const setupScheme = () => {
+    const html = select("html");
+    const setScheme = scheme => 
+        html.className = scheme;
+    
+    setScheme(colorScheme.getScheme());
+    colorScheme.subscribe(setScheme);
+}
+
+const setupDot = () => {
+    const dot = select(".dot");
+    dot.onclick = colorScheme.toggle;
+}
+
+const showAnchor = (a, i) => {
+    a.style.transition = `transform 600ms ${200*i}ms ease-in-out`;
+    a.classList += "show";
+
+    setTimeout(() => a.removeAttribute("style"), 600);
+}
+
+const setupMenuTransition = () => {
+    const menu = select(".menu");
+    if (!menu) return;
+
+    const { children: menuItems } = menu.children[0];
+    Array.from(menuItems)
+        .map(li => li.children[0])
+        .forEach(showAnchor);
+}
 
 window.onload = () => {
-    const html = document.querySelector("html");
-    html.className = getColorScheme();
-
-    const menu = document.querySelector(".menu");
-    if (menu) {
-        Array.from(menu.children[0].children).forEach((li, i) => {
-            const [a] = li.children;
-            a.style.transition = `transform 600ms ${200*i}ms ease-in-out`;
-            a.classList += "show";
-
-            setTimeout(() => a.removeAttribute("style"), 600);
-        });
-    }
-
-    const dot = document.querySelector(".dot");
-    dot.onclick = e => {
-        const scheme = getColorScheme() == "light"
-            ? "dark"
-            : "light";
-
-        html.className = scheme;
-        storeColorScheme(scheme);
-    }
+    setupScheme();
+    setupMenuTransition();
+    setupDot();
 }
