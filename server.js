@@ -55,4 +55,4 @@ const server = http.createServer((req, res) => {
     route ? route() : notFound(res);
 });
 
-server.listen(3000, () => console.log("Listening at port 3000..."));
+server.listen(process.env.port || 3000, () => console.log("Listening at port 3000..."));
