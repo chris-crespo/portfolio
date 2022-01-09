@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;600&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400&display=swap');
 
 :root {
     --white: #f0efef;
@@ -41,7 +37,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     max-height: 100%;
 }
 
@@ -138,7 +134,7 @@ textarea {
 }
 
 li {
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 mark {
@@ -155,10 +151,10 @@ main {
 .side-wrapper {
     position: sticky;
     top: 0;
+    z-index: 99;
 
     background-color: var(--bg);
     width: 80%;
-    padding: 26px 10%;
 }
 
 .side {
@@ -194,7 +190,7 @@ a {
     top: 1px;
 
     margin-right: 14px;
-    margin-left: 6px;
+    margin-left: 12px;
 }
 
 .dot-wrapper {
@@ -256,12 +252,6 @@ a:hover {
 
 .article {
     margin-top: 14px;
-}
-
-.article > :not(.article-img-wrapper, .button) {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .article-header {
@@ -326,7 +316,7 @@ a:hover {
     padding: 14px 0;
     border: 1px solid var(--fg);
     border-radius: 26px;
-    margin: 54px auto 38px;
+    margin: 72px auto 38px;
     text-align: center;
     cursor: pointer;
 }
@@ -393,6 +383,10 @@ a:hover {
     transform: scale(100%);
 }
 
+.contact .button {
+    margin-top: 0;
+}
+
 .not-found {
     position: absolute;
     top: 50vh;
@@ -403,19 +397,149 @@ a:hover {
     line-height: 1.2em;
 }
 
+@media (min-width: 800px) and (orientation: portrait) {
+    main {
+        margin-top: 48px;
+    }
+
+    .menu a {
+        font-size: 110px;
+        line-height: 1.3em;
+    }
+
+    .article {
+        margin-top: 48px;
+    }
+
+    .article-img-wrapper {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 38px;
+    }
+
+    .article-alt-header, .button {
+        margin-top: 64px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .side-wrapper {
+        padding: 26px 10%;
+    }
+
+    .article > :not(.article-img-wrapper, .button) {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 @media (min-width: 1000px) {
     .side-wrapper {
-        flex-direction: row-reverse;
+        width: 100vh;
+        position: fixed;
+        transform: rotate(-90deg);
+        transform-origin: top right;
+        left: calc(-100vh + 36px);
+    }
 
+    .side {
         position: absolute;
-        left: 30px;
-        bottom: calc(50vh);
-        transform: translateY(calc(50% + 128px)) rotate(-90deg);
-        transform-origin: top left;
+        left: calc(50% - 58px);
+        flex-direction: row-reverse;
+    }
+
+    .side a {
+        margin: 0 16px;
     }
 
     .side-wrapper .bar {
         width: 100px;
+        top: -1px;
+        margin-left: 0;
+        margin-right: 22px;
     }
 
+    .dot-wrapper {
+        top: 0;
+        right: 34px;
+    }
+
+    main:not(.contact) {
+        display: flex;
+        position: absolute;
+        bottom: 5%;
+        left: 126px;
+    }
+
+    .description {
+        align-self: flex-end;
+        flex-basis: 300px;
+        margin-right: 15%;
+        margin-bottom: 26px;
+    }
+
+    .menu {
+        flex-grow: 2;
+        overflow-y: scroll;
+        max-height: 528px;
+    }
+
+    .menu a {
+        font-size: 110px;
+        line-height: 1.2em;
+    }
+
+    .article, .contact {
+        margin-top: 7%;
+        max-width: 800px;
+        margin: 7% auto 0;
+    }
+
+    .article-quote {
+        text-align: left;
+        padding-left: 20px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .side {
+        left: calc(50vh - 120px);
+    }
+
+    .side-wrapper .bar {
+        top: 1px;
+    }
+
+    main:not(.contact) {
+        bottom: 0;
+    }
+}
+
+@media (min-width: 1600px) {
+    main:not(.contact) {
+        left: 10%;
+        bottom: 10%;
+    }
+
+    .description {
+        margin-right: 10%;
+    }
+
+    .menu {
+        max-height: 720px;
+    }
+
+    .menu a {
+        font-size: 180px;
+        line-height: 1em;
+    }
+
+    .article, .contact {
+        max-width: 900px;
+    }
+
+    .article p, .article a {
+        font-size: 16px;
+    }
 }
