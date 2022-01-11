@@ -27,3 +27,7 @@ textarea {
 ::-webkit-scrollbar {
     background-color: transparent;
 }
+
+::-webkit-scrollbar-button:vertical {
+    display: none;
+}
