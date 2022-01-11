@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     line-height: 1em;
+    scrollbar-color: var(--input-border) transparent;
 }
 
 a {
@@ -21,4 +22,8 @@ input, textarea {
 
 textarea {
     resize: none;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
 }
