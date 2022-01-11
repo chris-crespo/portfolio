@@ -24,10 +24,3 @@ textarea {
     resize: none;
 }
 
-::-webkit-scrollbar {
-    background-color: transparent;
-}
-
-::-webkit-scrollbar-button:vertical {
-    display: none;
-}
